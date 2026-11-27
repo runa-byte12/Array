@@ -2,18 +2,24 @@
 int main(){
     int n;
     scanf("%d",&n);
-    int a[n+1];
+    int a[n];
     for(int i=0;i<n;i++){
         scanf("%d",&a[i]);
     }
-    int idex,val;
-    scanf("%d %d",&idex,&val);
-    for(int i=n;i>=idex+1;i--){
-        a[i]=a[i-1];
+    int val;
+    int found=0;
+    scanf("%d",&val);
+    for(int i=0;i<n;i++){
+        if(a[i]==val){
+            printf("%d",i);
+            found=1;
+            break;
+        }
     }
-    a[idex]=val;
-    for(int i=0;i<=n;i++){
-        printf("%d",&a[i]);
-    }
+    if(found==0){
+            printf("-1");
+        }
     return 0;
+    
+
 }
